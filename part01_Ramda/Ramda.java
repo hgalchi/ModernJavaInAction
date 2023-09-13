@@ -23,9 +23,18 @@ public class Ramda {
         //Function
         new Ramda_Function().map(Arrays.asList("apple", "orange", "wat"), (String s) -> s.length());
 
+        // sorting
         new Ramda_Function().map(Arrays.asList(1, 2, 3, 4), apple::new);
+        List<apple> inventory = new ArrayList<>(Arrays.asList(
+                new apple(1),
+                new apple(2),
+                new apple(3)
 
-        //생성자 참조
+        ));
+        inventory.sort(Comparator.comparing(apple::getWeigh).reversed());
+
+        inventory.sort(Comparator.comparing(apple::getWeigh).reversed()
+                .thenComparing(apple::getWeigh));
 
 
 
@@ -66,28 +75,22 @@ class Ramda_Function{
     }
 }
 
-class apple extends fruit{
+class apple {
+
+    Integer weigh;
     public apple(int weigh ) {
         this.weigh = weigh*2;
     }
-}
 
-class orange extends fruit{
-    public orange(int weigh) {
-        this.weigh = weigh * 3;
+    public  int getWeigh() {
+        return weigh;
     }
 }
 
-class fruit{
-    int weigh;
-}
+
+
 //todo : 120p
-class MyFruit{
 
-    public fruit givemefruit(String fruit, Integer weigh) {
-        return
-    }
-}
 
 
 
