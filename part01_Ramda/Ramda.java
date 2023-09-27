@@ -37,6 +37,7 @@ public class Ramda {
                 .thenComparing(apple::getWeigh));
 
 
+        new primitivetype().map(3.2,(t)-> System.out.println("result :"+t));
 
 
     }
@@ -72,6 +73,12 @@ class Ramda_Function{
             System.out.println(result);
         }
         return result;
+    }
+}
+
+class primitivetype{
+    public <T> void map(T i, Consumer<T> c) {
+        c.accept(i);
     }
 }
 
